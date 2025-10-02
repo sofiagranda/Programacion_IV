@@ -1,1 +1,1 @@
-print("Este es un ejemplo tema reserva de vuelos")
+print("Este es un ejemplo tema: Control de Inventario")

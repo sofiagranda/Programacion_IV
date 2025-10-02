@@ -1,1 +1,1 @@
-print("Bienvenido Ejemplo de la semana 1")
+print("Bienvenido al Ejemplo de la semana 1")
