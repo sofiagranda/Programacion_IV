@@ -15,7 +15,7 @@ fun main() {
 
     println("clasificacion del producto segun stock")
 
-    var stock: int = 8
+    var stock: Int = 8
 
     if (stock > 10) {
         println("stock alto")
