@@ -3,9 +3,9 @@ package con.example.inventario
 fun main() {
     println("control de inventario - operadores de igualdad")
 
-    val producto1: string = "sable de luz"
-    val producto2: string = "sable de luz"
-    val producto3: string = string("sable de luz".tochararray())
+    val producto1: String = "sable de luz"
+    val producto2: String = "sable de luz"
+    val producto3: String = String("sable de luz".toCharArray())
 
     println("igualdad estructural")
     println(producto1 == producto2)

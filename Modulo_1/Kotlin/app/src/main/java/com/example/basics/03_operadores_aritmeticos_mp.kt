@@ -3,10 +3,10 @@ package con.example.inventario
 fun main() {
     println("control de inventario - operaciones aritmeticas")
 
-    val precio_unitario: double = 10.0
-    val cantidad: double = 5.0
-    val descuento: double = 2.0
-    val IVA: double = 1.5
+    val precio_unitario: Double = 10.0
+    val cantidad: Double = 5.0
+    val descuento: Double = 2.0
+    val IVA: Double = 1.5
 
     println("precio unitario: ${precio_unitario}")
     println("cantidad: ${cantidad}")
