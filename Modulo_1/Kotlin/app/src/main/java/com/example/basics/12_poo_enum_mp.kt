@@ -21,13 +21,13 @@ enum class CategoriaProducto(val tipo: String, val prioridad: Int) {
     }
 }
 
-class Producto(val categoria: CategoriaProducto, val nombre: String) {
+class Productos(val categoria: CategoriaProducto, val nombre: String) {
     fun registrar() = "Registrando producto '$nombre' en categoría ${categoria.tipo}"
     fun detalles() = "${categoria.descripcion()} - Prioridad ${categoria.prioridad}"
 }
 
 fun main() {
-    val producto1 = Producto(CategoriaProducto.Tecnologia, "Laptop HP Envy")
+    val producto1 = Productos(CategoriaProducto.Tecnologia, "Laptop HP Envy")
     println(producto1)
     println(producto1.registrar())
     println(producto1.detalles())
