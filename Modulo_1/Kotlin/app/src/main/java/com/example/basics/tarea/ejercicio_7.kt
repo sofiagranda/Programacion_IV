@@ -31,7 +31,7 @@ fun main() {
         }
 
         if (items > 10) {
-            println("Caja rápida no disponible")
+            println("Caja rapida no disponible")
         }
 
         // Acumula la venta del día
