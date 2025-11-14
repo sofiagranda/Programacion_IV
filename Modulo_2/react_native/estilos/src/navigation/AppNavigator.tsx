@@ -1,8 +1,8 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import UsersListScreen from "../screens/UsersListScreen";
-import UserDetailScreen from "../screens/UserDetailScreen";
+import UsersListScreen from "../features/users/screens/UsersListScreen";
+import UserDetailScreen from "../features/users/screens/UserDetailScreen";
 import colors from "../theme/colors";
 
 export type RootStackParamList = {

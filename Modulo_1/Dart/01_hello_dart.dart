@@ -1,6 +1,4 @@
-void main(){
-  print ("Hello Dart");
-
-  print ("Bienvenido a Dart");
-  
+void main() {
+  print("Hello Dart");
+  print("bienvenido a dart");
 }

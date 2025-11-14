@@ -13,51 +13,39 @@ GoRouter buildRouter({
   required ThemeController theme,
 }) {
   return GoRouter(
-    initialLocation: '/home',  // Ruta inicial de la aplicación
-    refreshListenable: Listenable.merge([theme, app]),  // Escucha los cambios en el tema y el estado
+    initialLocation: '/home',
+    refreshListenable: Listenable.merge([theme, app]),
     routes: [
-      // Definimos el ShellRoute que actúa como contenedor principal para las rutas secundarias
       ShellRoute(
         builder: (context, state, child) {
-          // Usamos 'ShellScaffold' para envolver las páginas
           return ShellScaffold(
             child: child,
-            app: app,    // Pasamos 'app' al Scaffold
-            theme: theme,  // Pasamos 'theme' al Scaffold
-            location: state.uri.toString(),  // Pasamos la ubicación actual
+            app: app,
+            theme: theme,
+            location: state.uri.toString(),
           );
         },
         routes: [
-          // Ruta principal /home
           GoRoute(
             path: '/home',
-            builder: (context, state) {
-              return HomePage(app: app, theme: theme);  // Pasamos 'app' y 'theme' a HomePage
-            },
+            builder: (context, state) => HomePage(app: app),
             routes: [
-              // Ruta secundaria dentro de /home para los detalles
               GoRoute(
-                path: 'detail/:id',  // Ruta dinámica para los detalles
+                path: 'detail/:id',
                 builder: (context, state) {
                   final id = state.pathParameters['id'] ?? '—';
-                  return DetailPage(id: id);  // Pasamos el 'id' a la página de detalles
+                  return DetailPage(id: id);
                 },
               ),
             ],
           ),
-          // Ruta de configuración /settings
           GoRoute(
             path: '/settings',
-            builder: (context, state) {
-              return SettingsPage(theme: theme);  // Pasamos 'theme' a SettingsPage
-            },
+            builder: (context, state) => SettingsPage(theme: theme),
           ),
-          // Ruta de perfil /profile
           GoRoute(
             path: '/profile',
-            builder: (context, state) {
-              return ProfilePage(app: app);  // Pasamos 'app' a ProfilePage
-            },
+            builder: (context, state) => ProfilePage(app: app),
           ),
         ],
       ),

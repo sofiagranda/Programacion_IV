@@ -29,7 +29,7 @@ export default function YouTubeScreen() {
           height={220}
           play={playing}
           videoId={videoId}
-          onChangeState={(s: any) => {
+          onChangeState={(s:any) => {
             if (s === "ended") setPlaying(false);
           }}
         />

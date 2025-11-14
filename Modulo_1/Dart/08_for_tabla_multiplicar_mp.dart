@@ -1,8 +1,7 @@
-void main(){
-  int totalDias = 10;
-  double productosVendidosPorDia = 5;
-
-  for (int dia = 1; dia <= totalDias; dia++) {
-    print("Día $dia: Se vendieron ${dia * productosVendidosPorDia} productos");
-  }
+void main() {
+  int meses = 10;
+  double cuota =150.0;
+ for (int i=1; i<=meses;i++){
+   print("mes $i * $cuota = ${i*cuota}");
+ }
 }
