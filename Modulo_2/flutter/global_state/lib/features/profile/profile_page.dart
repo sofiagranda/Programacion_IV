@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../core/state/app_state.dart';
+import '../../core/state/app_state.dart';
 
 class ProfilePage extends StatelessWidget {
   final AppState app;

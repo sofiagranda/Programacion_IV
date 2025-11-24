@@ -1,6 +1,9 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import UsersListScreen from "../screens/UsersListScreen";
+import UserDetailScreen from "../screens/UserDetailScreen";
+import PostsListScreen from "../screens/PostsListScreen";
 import ToolsMenuScreen from "../screens/ToolsMenuScreen";
 import CalculatorScreen from "../screens/CalculatorScreen";
 import TriangleAreaScreen from "../screens/TriangleAreaScreen";
@@ -31,6 +34,9 @@ export default function AppNavigator() {
           contentStyle: { backgroundColor: "#0d1117" },
         }}
       >
+        <Stack.Screen name="Users" component={UsersListScreen} options={{ title: "Usuarios" }} />
+        <Stack.Screen name="UserDetail" component={UserDetailScreen} options={{ title: "Detalle" }} />
+        <Stack.Screen name="Posts" component={PostsListScreen} options={{ title: "Posts" }} />
 
         <Stack.Screen name="Tools" component={ToolsMenuScreen} options={{ title: "Tools" }} />
         <Stack.Screen name="Calculator" component={CalculatorScreen} options={{ title: "Calculadora" }} />

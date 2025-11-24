@@ -8,6 +8,7 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.MediaController
 import android.widget.VideoView
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
@@ -17,10 +18,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        // --- WebView para YouTube (iframe embed) ---
+        // --- YouTube en WebView ---
         webView = findViewById(R.id.webViewYouTube)
+
         val ws: WebSettings = webView.settings
         ws.javaScriptEnabled = true
         ws.domStorageEnabled = true
@@ -29,35 +32,35 @@ class MainActivity : AppCompatActivity() {
         webView.webChromeClient = WebChromeClient()
         webView.webViewClient = WebViewClient()
 
-        webView.clearCache(true)
-        webView.clearHistory()
+        val youTubeEmbedUrl = "https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&showinfo=0"
 
-        val videoId = "hg7wma0GXAc" // ID del video
         val html = """
-            <html>
-                <body style="margin:0;padding:0;">
-                    <iframe width="100%" height="100%" 
-                        src="https://www.youtube.com/embed/$videoId" 
-                        frameborder="0" allowfullscreen>
-                    </iframe>
-                </body>
-            </html>
+            
+              
+                
+                body{margin:0;background:#000;}
+              
+              
+                
+              
+            
         """.trimIndent()
 
         webView.loadDataWithBaseURL(null, html, "text/html", "UTF-8", null)
 
-        // --- VideoView para MP4 local ---
+        // --- MP4 local en VideoView (res/raw/demo.mp4) ---
         videoView = findViewById(R.id.videoViewMp4)
+
         val mediaController = MediaController(this)
         mediaController.setAnchorView(videoView)
         videoView.setMediaController(mediaController)
 
-        val videoUri: Uri = Uri.parse("android.resource://${packageName}/${R.raw.demo}")
+        val videoUri: Uri = Uri.parse("android.resource://${'$'}packageName/${'$'}{R.raw.demo}")
         videoView.setVideoURI(videoUri)
 
         videoView.setOnPreparedListener { mp ->
             mp.isLooping = false
-            videoView.start() // Inicia automáticamente
+            videoView.start()
         }
     }
 

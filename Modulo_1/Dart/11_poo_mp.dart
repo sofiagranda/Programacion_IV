@@ -1,19 +1,18 @@
 void main() {
-  final Producto laptop = Producto(nombre: 'Laptop Dell', descripcion: 'Portátil con i7 y 16GB RAM');
-  
-  print(laptop);
-  print(laptop.nombre);
-  print(laptop.descripcion);
+final estudiante alumno =estudiante (name:'Sara loor',carrera: 'desarrollo de Software');
+  print(alumno);
+  print(alumno.name);
+  print(alumno.carrera);
 }
-
-class Producto {
-  String nombre = "";
-  String descripcion = "";
+class estudiante{
+  String name="" ;
+  String carrera="";
+  estudiante({
+    required this.name,
+    this.carrera="sin carrera asignada"});
   
-  Producto({required this.nombre, this.descripcion = "Sin descripción"});
-
-  @override
-  String toString() {
-    return "$nombre - $descripcion";
-  }
+    @override
+    String toString(){
+      return "$name- $carrera"; 
+}
 }

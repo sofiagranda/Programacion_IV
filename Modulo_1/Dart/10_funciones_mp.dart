@@ -1,19 +1,19 @@
 void main() {
-  print(saludoGeneral());
-  print(sumarStock(3, 4));
-  print(sumarStockOpcional(6, 8));
-  print(sumarStockOpcional(8));
-  print(saludoPersonalizado(name: "Sofía", message: "Inventario actualizado"));
+print(bienvenidaGeneral());
+print (calcularPuntaje(8, 9));
+print (calcularPuntajeOpcional(7, 8));
+print (calcularPuntajeOpcional(9));
+print(saludoEstudiante(name: "Rodriguez",message:"gracias por visitarnos"));
+print(saludoEstudiante(name: "Sara"));
 }
 
-String saludoGeneral() => "¡Bienvenidos al sistema de inventario!";
+String bienvenidaGeneral()=>'bienvenido instituto educativo tu puntaje es :';
 
-int sumarStock(int a, int b) => a + b;
-
-int sumarStockOpcional(int a, [int b = 0]) {
-  return a + b;
+int calcularPuntaje (int nota1, int nota2)=>nota1+nota2;
+int calcularPuntajeOpcional (int nota1, [int nota2=0]){
+  return  nota1+nota2;
 }
 
-String saludoPersonalizado({required String name, String message = "Hola"}) {
-  return '$message, $name';
+String saludoEstudiante({required String name, String message="hola"}){
+  return '$message $name';
 }

@@ -1,15 +1,12 @@
 void main() {
-  print("Listas y colecciones en Inventario");
-
-  final productos = ["Laptop", "Mouse", "Teclado", "Teclado", "Monitor", "Monitor", "Monitor", "Impresora", "Impresora", "Parlantes", "Webcam", "Router"];
-  
-  print("Lista original de productos: $productos");
-  print("Cantidad total de productos: ${productos.length}");
-  print("Producto en posición 4: ${productos[4]}");
-  print("Primer producto en lista: ${productos.first}");
-  
-  final productosInvertidos = productos.reversed;
-  print("Lista invertida: $productosInvertidos");
-  print("Lista invertida como List: ${productosInvertidos.toList()}");
-  print("Lista invertida sin duplicados (Set): ${productosInvertidos.toSet()}");
+  print("Mapas e Iterables - Sistema de Admisión");
+  final puntajes = [800, 750, 900, 750, 820, 900, 900, 950, 950, 970, 980, 1000];
+  print("Lista original de puntajes: $puntajes");
+  print("Cantidad de postulantes: ${puntajes.length}");
+  print("Puntaje del postulante en posición 4: ${puntajes[4]}");
+  print("Primer puntaje registrado: ${puntajes.first}");
+  final puntajesInvertidos = puntajes.reversed;
+  print("Puntajes en orden inverso: $puntajesInvertidos");
+  print("Lista (con duplicados): ${puntajesInvertidos.toList()}");
+  print("Conjunto (sin duplicados): ${puntajesInvertidos.toSet()}");
 }

@@ -10,7 +10,6 @@ export default function Contador() {
         Contador: {count}
       </Text>
       <Button title="Incrementar" onPress={() => setCount(count + 1)} />
-      <Button title="Restar" onPress={() => setCount(count - 1)} />
     </View>
   );
 }
