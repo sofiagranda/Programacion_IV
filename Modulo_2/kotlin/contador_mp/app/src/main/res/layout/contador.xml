@@ -1,0 +1,132 @@
+package com.example.inventario
+
+import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var tvDisplay: TextView
+
+    private var stock = 0
+    private var historial = mutableListOf<String>()
+    private var productoActual = "Sin producto"
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        tvDisplay = findViewById(R.id.tvDisplay)
+
+        findViewById<Button>(R.id.btnAC).setOnClickListener { nuevoProducto() }
+        findViewById<Button>(R.id.btnBack).setOnClickListener { editarProducto() }
+        findViewById<Button>(R.id.btnDiv).setOnClickListener { eliminarProducto() }
+
+        findViewById<Button>(R.id.btn7).setOnClickListener { agregarStock(1) }
+        findViewById<Button>(R.id.btn8).setOnClickListener { agregarStock(5) }
+        findViewById<Button>(R.id.btn9).setOnClickListener { registrarEntrada() }
+        findViewById<Button>(R.id.btnMul).setOnClickListener { registrarSalida() }
+
+        findViewById<Button>(R.id.btn4).setOnClickListener { quitarStock(1) }
+        findViewById<Button>(R.id.btn5).setOnClickListener { quitarStock(5) }
+        findViewById<Button>(R.id.btn6).setOnClickListener { mostrarExistencia() }
+        findViewById<Button>(R.id.btnSub).setOnClickListener { mostrarCosto() }
+
+        findViewById<Button>(R.id.btn1).setOnClickListener { buscarProducto() }
+        findViewById<Button>(R.id.btn2).setOnClickListener { mostrarProducto() }
+        findViewById<Button>(R.id.btn3).setOnClickListener { mostrarCodigo() }
+        findViewById<Button>(R.id.btnAdd).setOnClickListener { totalInventario() }
+
+        findViewById<Button>(R.id.btn0).setOnClickListener { mostrarHistorial() }
+        findViewById<Button>(R.id.btnDot).setOnClickListener { agregarNota() }
+        findViewById<Button>(R.id.btnEq).setOnClickListener { guardarCambios() }
+
+        actualizarDisplay("Inventario listo")
+    }
+
+    private fun nuevoProducto() {
+        productoActual = "Producto nuevo"
+        stock = 0
+        historial.clear()
+        actualizarDisplay("Nuevo producto creado")
+    }
+
+    private fun editarProducto() {
+        actualizarDisplay("Editar producto: $productoActual")
+    }
+
+    private fun eliminarProducto() {
+        productoActual = "Sin producto"
+        stock = 0
+        historial.add("Producto eliminado")
+        actualizarDisplay("Producto eliminado")
+    }
+
+    private fun agregarStock(cantidad: Int) {
+        stock += cantidad
+        historial.add("Stock +$cantidad (Total: $stock)")
+        actualizarDisplay("Stock: $stock")
+    }
+
+    private fun quitarStock(cantidad: Int) {
+        stock -= cantidad
+        if (stock < 0) stock = 0
+        historial.add("Stock -$cantidad (Total: $stock)")
+        actualizarDisplay("Stock: $stock")
+    }
+
+    private fun registrarEntrada() {
+        historial.add("Entrada registrada (Stock actual: $stock)")
+        actualizarDisplay("Entrada al inventario")
+    }
+
+    private fun registrarSalida() {
+        historial.add("Salida registrada (Stock actual: $stock)")
+        actualizarDisplay("Salida del inventario")
+    }
+
+    private fun mostrarExistencia() {
+        actualizarDisplay("Existencia: $stock")
+    }
+
+    private fun mostrarCosto() {
+        actualizarDisplay("Costo: (sin definir)")
+    }
+
+    private fun buscarProducto() {
+        actualizarDisplay("Buscando producto…")
+    }
+
+    private fun mostrarProducto() {
+        actualizarDisplay("Producto: $productoActual")
+    }
+
+    private fun mostrarCodigo() {
+        actualizarDisplay("Código: 0001")
+    }
+
+    private fun totalInventario() {
+        actualizarDisplay("Total inventario: $stock unidades")
+    }
+
+    private fun mostrarHistorial() {
+        val texto = if (historial.isEmpty()) "Sin historial"
+        else historial.joinToString("\n")
+        actualizarDisplay(texto)
+    }
+
+    private fun agregarNota() {
+        historial.add("Nota agregada")
+        actualizarDisplay("Nota agregada")
+    }
+
+    private fun guardarCambios() {
+        historial.add("Cambios guardados")
+        actualizarDisplay("Guardado correctamente")
+    }
+
+    private fun actualizarDisplay(texto: String) {
+        tvDisplay.text = texto
+    }
+}
