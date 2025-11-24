@@ -9,6 +9,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -35,7 +36,7 @@ class MainHealthExercises : ComponentActivity() {
 @Composable
 fun HealthNavApp() {
     val nav = rememberNavController()
-    MaterialTheme {
+        MaterialTheme{
         Surface(modifier = Modifier.fillMaxSize()) {
             NavHost(
                 navController = nav,
@@ -66,14 +67,22 @@ fun HealthHomeScreen(nav: NavHostController) {
         Spacer(Modifier.height(20.dp))
         Button(
             onClick = { nav.navigate(HealthScreen.Bmi.route) },
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth(),
+            colors = ButtonDefaults.buttonColors(
+                Color.Cyan,
+                Color.Black
+            )
         ) {
             Text("Calculate BMI") // Cambiado aquí
         }
         Spacer(Modifier.height(12.dp))
         Button(
             onClick = { nav.navigate(HealthScreen.Converter.route) },
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth(),
+            colors = ButtonDefaults.buttonColors(
+                Color.Green,
+                Color.Red
+            )
         ) {
             Text("Convert Meters/Kilometers") // Cambiado aquí
         }

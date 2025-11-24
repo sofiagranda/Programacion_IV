@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Hello_Jetpack_compouse">
         <activity
-            android:name=".MainTravelExercises"
+            android:name=".MainHealthExercises"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Hello_Jetpack_compouse">
