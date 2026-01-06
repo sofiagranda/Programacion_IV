@@ -5,53 +5,18 @@ import TypeScriptDemo from './src/screens/TypeScriptDemo';
 import { StyleSheet, Text, View } from "react-native";
 import { AppTitle } from "@/components/common/AppTitle";
 import AppButton from '@/components/AppButton';
+import { ClockDemo } from '@/screens/ClockDemo';
+import { UseEffectAsyncDemo } from '@/screens/UseEffectAsyncDemo';
+import { AbortFetchDemo } from '@/screens/AbortFetchDemo';
+import { ProductsDemo } from '@/screens/Productos';
+import { Parte09Lab } from '@/screens/Parte09Lab';
+import { Parte10Lab } from '@/screens/Parte10Lab';
 
 function App(): React.JSX.Element {
   return (
-    <>
-      {/* Primer elemento: Contiene TypeScriptDemo */}
-      <SafeAreaView style={{ flex: 1, backgroundColor: '#0d1117' }}>
-        {/* Usando el componente StatusBar de react-native */}
-        <StatusBar barStyle="light-content" backgroundColor="#0d1117" />
-        <TypeScriptDemo />
-      </SafeAreaView>
-
-      {/* Segundo elemento: El View adicional */}
-      <View style={styles.container}>
-        {/* <AppTitle value="Estructura lista" /> */}
-        <Text style={{ color: 'white' }}>Imports limpios con alias ✅</Text>
-        {/* <StatusBar style="light" /> */}
-      </View>
-
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>4. Componente con Props Tipadas</Text>
-
-        <AppButton
-          title="Presionar aquí"
-          onPress={() => console.log('Botón presionado!')}
-          variant="primary"
-        />
-
-        <View style={{ height: 10 }} />
-
-        <AppButton
-          title="Cargando..."
-          onPress={() => { }}
-          loading={true}
-          variant="secondary"
-        />
-
-        <View style={{ height: 10 }} />
-
-        <AppButton
-          title="Deshabilitado"
-          onPress={() => { }}
-          disabled={true}
-          variant="outline"
-        />
-      </View>
-
-    </>
+    <View style={styles.container}>
+        <Parte10Lab />
+    </View>
   );
 }
 
