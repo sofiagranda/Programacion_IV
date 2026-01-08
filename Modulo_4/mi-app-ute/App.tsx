@@ -11,64 +11,16 @@ import { AbortFetchDemo } from '@/screens/AbortFetchDemo';
 import { ProductsDemo } from '@/screens/Productos';
 import { Parte09Lab } from '@/screens/Parte09Lab';
 import { Parte10Lab } from '@/screens/Parte10Lab';
+import { Parte11Lab } from '@/screens/Parte11Lab';
+import { Parte12Lab } from '@/screens/Parte12Lab';
+import { NavigationContainer } from "@react-navigation/native";
+import { AppNavigator } from "@/navigation/AppNavigator";
 
-function App(): React.JSX.Element {
+export default function App() {
   return (
-    <View style={styles.container}>
-        <Parte10Lab />
-    </View>
+    <NavigationContainer>
+      <AppNavigator />
+      <StatusBar style="light" />
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#0d1117",
-    alignItems: "center",
-    justifyContent: "center",
-    padding: 16,
-  },
-  section: {
-    marginBottom: 30,
-  },
-  sectionTitle: {
-    fontSize: 18,
-    fontWeight: '600',
-    color: '#c9d1d9',
-    marginBottom: 10,
-    borderLeftWidth: 3,
-    borderLeftColor: '#58a6ff',
-    paddingLeft: 10,
-  },
-  card: {
-    backgroundColor: '#161b22',
-    borderWidth: 1,
-    borderColor: '#30363d',
-    borderRadius: 8,
-    padding: 16,
-  },
-  label: {
-    color: '#8b949e',
-    fontSize: 14,
-    marginTop: 8,
-  },
-  value: {
-    color: '#c9d1d9',
-    fontSize: 16,
-    fontWeight: '500',
-  },
-  success: {
-    color: '#3fb950',
-  },
-  error: {
-    color: '#f85149',
-  },
-  codeComment: {
-    color: '#8b949e',
-    fontStyle: 'italic',
-    fontSize: 12,
-    marginTop: 8,
-  },
-});
-
-export default App;
