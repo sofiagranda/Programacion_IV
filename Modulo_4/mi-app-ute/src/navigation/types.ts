@@ -1,8 +1,10 @@
 export type RootStackParamList = {
     Home: undefined;
-    Details: { id: string; title: string };
     Settings: undefined;
     Demo: undefined;
     LoginForm: undefined;
     Trapecio: undefined;
+    Products: undefined;
+    Details: { id: string; title: string, detail:string };
+    Profile: { userId: string; name: string; apellido: string };
   };

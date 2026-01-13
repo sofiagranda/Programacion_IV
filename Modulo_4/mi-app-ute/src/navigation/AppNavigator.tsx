@@ -6,6 +6,8 @@ import { SettingsScreen } from "@/screens/SettingsScreen";
 import { ClockDemo } from "@/screens/ClockDemo";
 import { LoginFormScreen } from "@/screens/LoginFormScreen";
 import { TrapezoidAreaScreen } from "@/screens/TrapecioScreen";
+import { ProductsListScreen } from "@/screens/ProductsListScreen";
+import { ProfileScreen } from "@/screens/ProfileScreen";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -21,10 +23,20 @@ export function AppNavigator() {
     >
       <Stack.Screen name="Home" component={HomeScreen} options={{ title: "Inicio" }} />
       <Stack.Screen name="Details" component={DetailsScreen} options={{ title: "Detalles" }} />
-      <Stack.Screen name="Settings" component={SettingsScreen} options={{ title: "Settings" }} />
       <Stack.Screen name="Demo" component={ClockDemo} options={{ title: "Demo" }} />
       <Stack.Screen name="LoginForm" component={LoginFormScreen} options={{ title: "Login Form" }} />
       <Stack.Screen name="Trapecio" component={TrapezoidAreaScreen} options={{ title: "Trapecio" }} />
+      <Stack.Screen name="Products" component={ProductsListScreen} options={{ title: "Productos" }} />
+      <Stack.Screen
+        name="Profile"
+        component={ProfileScreen}
+        options={{ title: "Perfil" }}
+      />
+      <Stack.Screen
+        name="Settings"
+        component={SettingsScreen}
+        options={{ title: "Settings" }}
+      />
     </Stack.Navigator>
   );
 }
